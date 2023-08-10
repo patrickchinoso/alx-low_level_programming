@@ -1,5 +1,5 @@
 /**
-* main - Name
+* main - Heello puts
 *
 * Return: 0 (Success)
 */
