@@ -1,9 +1,7 @@
 #include <stdio.h>
-#include <unistd.h>
 /**
- * main - A C program that prints 
-exactly
- * Return 1 (success)
+ * main - Entry point
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
