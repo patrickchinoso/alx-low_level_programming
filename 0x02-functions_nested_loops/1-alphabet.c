@@ -1,15 +1,15 @@
 #include "main.h"
 
 /**
- *print_alphabet - create character with putchar
+ *print_alphabet - function that create all letters with putchar
  * Return:0
  */
 void print_alphabet(void)
 
 {
-	char i;
+	char j;
 
-	for (i = 'a' ; i <= 'z' ; i++)
-		_putchar(i);
+	for (j = 'a' ; j <= 'z' ; j++)
+		_putchar(j);
 	_putchar('\n');
 }
