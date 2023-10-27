@@ -1,26 +1,48 @@
 #include "main.h"
 
 /**
- * print_binary - function prints the binary rep of a number
- * @n: number to be printed in a binary tbd
+ * _pow - calculates (base ^ power)
+ * @base: base of the exponent
+ * @power: power of the exponent
+ *
+ * Return: value of (base ^ power)
+ */
+unsigned long int _pow(unsigned int base, unsigned int power)
+{
+	unsigned long int num;
+	unsigned int a;
+
+	num = 1;
+	for (a = 1; a <= power; a++)
+		num *= base;
+	return (num);
+}
+
+/**
+ * print_binary - prints the number in binary notation
+ * @n: number to print
+ *
+ * Return: void
  */
 void print_binary(unsigned long int n)
 {
-	int z, count = 0;
-	unsigned long int current;
+	unsigned long int divisor, check;
+	char flag;
 
-	for (z = 63; z >= 0; z--)
+	flag = 0;
+	divisor = _pow(2, sizeof(unsigned long int) * 8 - 1);
+	while (divisor != 0)
 	{
-		current = n >> z;
-
-		if (current & 1)
+		check = n & divisor;
+		if (check == divisor)
 		{
+			flag = 1;
 			_putchar('1');
-			count++;
 		}
-		else if (count)
+		else if (flag == 1 || divisor == 1)
+		{
 			_putchar('0');
+		}
+		divisor >>= 1;
 	}
-	if (!count)
-		_putchar('0');
 }
